@@ -1,0 +1,35 @@
+   <div class="content-wrapper">
+     {{>content-header}}
+ <section class="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                            <th>Student</th>
+                            <th>Miqdor</th>
+                            <th>Vaqti</th>
+                            <th>Izoh</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             {{#each payments}}
+                           <tr>
+                            <td>{{this.id}}</td>
+                            <td>{{userName this.user_id}}</td>
+                            <td>{{checkType type = this.type  amount = this.amount}}</td>
+                            <td>{{this.created_at}}</td>
+                            <td>{{this.comment}}</td>
+                           </tr> 
+                        {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+         {{!-- <div class="col-sm-2">
+                <a href="/payments/add" class="btn btn-primary">saqlash</a>
+            </div> --}}
+    </section>
